@@ -1,38 +1,24 @@
 import { motion } from 'framer-motion'
 
-const steps = [
-  {
-    num: '01',
-    title: 'Registra el evento o reserva',
-    text: 'Crea el evento con fecha, tipo, capacidad y requerimientos iniciales.'
-  },
-  {
-    num: '02',
-    title: 'Configura todos los detalles',
-    text: 'Comida, bebidas, decoración, proveedores y personal asignado en minutos.'
-  },
-  {
-    num: '03',
-    title: 'Controla costos e ingresos',
-    text: 'Sigue gastos, cobros y movimientos de almacén en tiempo real.'
-  },
-  {
-    num: '04',
-    title: 'Analiza la rentabilidad',
-    text: 'Accede a paneles financieros claros para decisiones rápidas.'
-  },
+const photos = [
+  'https://images.unsplash.com/photo-1521337588524-2b387cd205b9?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1519222970733-f546218fa6d7?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1513672009112-8277f37f0a32?q=80&w=1200&auto=format&fit=crop',
 ]
 
-export default function HowItWorks() {
+export default function Gallery() {
   return (
-    <section id="como-funciona" className="bg-gradient-to-b from-white to-emerald-50/50">
+    <section id="galeria" className="bg-gradient-to-b from-white to-emerald-50/50">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((s, i) => (
-            <motion.div key={s.num} initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.05}} className="p-6 rounded-xl border border-emerald-100 bg-white">
-              <div className="text-emerald-700 font-semibold">{s.num}</div>
-              <h3 className="mt-1 text-lg font-semibold text-slate-900">{s.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{s.text}</p>
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-emerald-800">Galería</h2>
+        <p className="mt-2 text-center text-slate-600 max-w-2xl mx-auto">Un vistazo a nuestros espacios y montajes. Imagina tu evento aquí.</p>
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+          {photos.map((src, i) => (
+            <motion.div key={src} initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.03}} className="relative overflow-hidden rounded-xl shadow-sm">
+              <img src={src} alt="Foto del local de eventos" className="h-44 md:h-56 w-full object-cover hover:scale-105 transition-transform duration-500"/>
             </motion.div>
           ))}
         </div>

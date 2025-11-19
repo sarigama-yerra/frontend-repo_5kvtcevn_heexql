@@ -1,25 +1,24 @@
 import { motion } from 'framer-motion'
 
-const plans = [
-  { name: 'Starter', price: '$59/mes', features: ['Hasta 50 eventos/año', '1 espacio', 'Soporte por email'] },
-  { name: 'Pro', price: '$129/mes', features: ['Hasta 200 eventos/año', '3 espacios', 'Soporte prioritario', 'Reportes financieros'] },
-  { name: 'Enterprise', price: 'A medida', features: ['Eventos ilimitados', 'Espacios ilimitados', 'Integraciones', 'Soporte dedicado'] },
+const eventTypes = [
+  { name: 'Bodas', desc: 'Ceremonias y recepciones con montajes elegantes y pista de baile.' },
+  { name: 'Cumpleaños', desc: 'Fiestas temáticas para todas las edades con DJ, barra y entretenimiento.' },
+  { name: 'Eventos corporativos', desc: 'Conferencias, lanzamientos y reuniones con soporte técnico y catering.' },
+  { name: 'Otros eventos', desc: 'Bautizos, aniversarios, graduaciones y más. Cuéntanos tu idea.' },
 ]
 
-export default function Pricing() {
+export default function EventTypes() {
   return (
-    <section id="precios" className="bg-white">
+    <section id="tipos" className="bg-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-6">
-          {plans.map((p, i) => (
-            <motion.div key={p.name} initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.05}} className={`p-6 rounded-xl border ${i===1 ? 'border-amber-200 shadow-lg' : 'border-slate-200 shadow-sm'} bg-white`}>
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-emerald-800">Tipos de eventos</h2>
+        <div className="mt-8 grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+          {eventTypes.map((p, i) => (
+            <motion.div key={p.name} initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.05}} className={`p-6 rounded-xl border border-emerald-100 bg-white shadow-sm hover:shadow-md`}>
               <h3 className="text-lg font-semibold text-slate-900">{p.name}</h3>
-              <div className="mt-2 text-3xl font-bold text-slate-900">{p.price}</div>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                {p.features.map(f => (<li key={f}>• {f}</li>))}
-              </ul>
-              <a href="#contacto" className={`mt-6 inline-flex px-4 py-2 rounded-md ${i===1 ? 'bg-amber-500 text-white hover:bg-amber-600' : 'border border-emerald-200 text-emerald-700 hover:bg-emerald-50'} transition-colors`}>
-                {i===2 ? 'Hablar con ventas' : 'Solicitar información'}
+              <p className="mt-2 text-sm text-slate-600">{p.desc}</p>
+              <a href="#contacto" className="mt-4 inline-flex px-4 py-2 rounded-md border border-emerald-200 text-emerald-700 hover:bg-emerald-50 transition-colors">
+                Solicitar cotización
               </a>
             </motion.div>
           ))}

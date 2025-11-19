@@ -5,7 +5,6 @@ import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
-import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -15,12 +14,17 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        {/* Por qué elegirnos */}
         <Benefits />
+        {/* Galería */}
         <HowItWorks />
+        {/* Servicios */}
         <Features />
+        {/* Testimonios */}
         <Testimonials />
+        {/* Tipos de eventos */}
         <Pricing />
-        <FAQ />
+        {/* Contacto / CTA final */}
         <Contact />
       </main>
       <Footer />

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 const questions = [
-  { q: '¿Cómo es el proceso de implementación?', a: 'Realizamos un onboarding guiado, migración de datos si aplica y capacitación al equipo.' },
-  { q: '¿Qué tipo de soporte ofrecen?', a: 'Soporte por email y chat, con planes de soporte prioritario para respuestas más rápidas.' },
-  { q: '¿Se integra con nuestra operación actual?', a: 'Sí. Nuestro equipo evalúa procesos y propone una configuración que minimiza cambios.' },
-  { q: '¿Podemos personalizar diseño y colores?', a: 'La interfaz es personalizable para que se adapte a la identidad del local de eventos.' },
-  { q: '¿Qué pasa con la seguridad y permisos?', a: 'Incluimos roles, trazabilidad por usuario y cifrado de datos en tránsito.' },
-  { q: '¿Hay contrato de permanencia?', a: 'Puedes cancelar cuando quieras. También ofrecemos descuentos anuales.' },
+  { q: '¿Cuál es la capacidad del salón?', a: 'Contamos con espacios modulables para distintos tamaños de evento. Consúltanos por el aforo según tu montaje.' },
+  { q: '¿Incluyen catering y barra?', a: 'Sí, ofrecemos menús personalizados y opciones de barra abierta o por consumo.' },
+  { q: '¿Pueden ayudar con la decoración?', a: 'Nuestro equipo diseña propuestas a medida según tu estilo y temática.' },
+  { q: '¿Cómo reservo una visita?', a: 'Completa el formulario y te contactaremos para coordinar día y hora.' },
+  { q: '¿Hay estacionamiento y accesibilidad?', a: 'Disponemos de estacionamiento y accesos adecuados. Te brindamos detalles según fecha y aforo.' },
+  { q: '¿Trabajan eventos corporativos?', a: 'Sí, contamos con equipamiento audiovisual y montaje para conferencias, lanzamientos y reuniones.' },
 ]
 
 export default function FAQ() {
@@ -14,8 +14,8 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-white">
       <div className="max-w-3xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-semibold text-slate-900 text-center">Preguntas frecuentes</h2>
-        <div className="mt-6 divide-y divide-slate-200 border rounded-xl border-slate-200 bg-white">
+        <h2 className="text-2xl font-semibold text-emerald-800 text-center">Preguntas frecuentes</h2>
+        <div className="mt-6 divide-y divide-slate-200 border rounded-xl border-emerald-100 bg-white">
           {questions.map((item, idx) => {
             const active = open === idx
             return (
